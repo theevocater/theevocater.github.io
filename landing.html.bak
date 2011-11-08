@@ -1,0 +1,36 @@
+<html>
+<head>
+		<title>Landing!</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <div class="landing_menu">
+    <ul class="landing_menu">
+				<li class="landing_menu">
+				<a class="landing_menu" href="/blog/">Blog
+						<img class="landing_menu" alt="Home" src="/img/blog_icon.png" height="129px" width="129px"/>
+				</a>
+				</li>
+				<li class="landing_menu">
+				<a class="landing_menu" href="/img/">Pictures
+						<img class="landing_menu" alt="Pictures" src="/img/pic-icon.png" height="129px" width="129px"/>
+				</a>
+				</li>
+				<li class="landing_menu">
+				<a class="landing_menu" href="http://twitter.com/theevocater">Twitter
+						<img class="landing_menu" alt="Pictures" src="/img/twitter-logo.png" height="129px" width="129px"/>
+				</a>
+				</li>
+				<li class="landing_menu">
+				<a class="landing_menu" href="http://theevocater.tumblr.com">Tumblr
+						<img class="landing_menu" alt="Pictures" src="/img/Tumblr.png" height="129px" width="129px"/>
+				</a>
+				</li>
+    </ul>
+    <hr />
+</div>
+<p class="footer">Maintained by theevocater</p>
+</body>
+</html>
