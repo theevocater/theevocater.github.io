@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+		<head>
+				<script type="text/javascript">
+						var x=15;
+						var y=15;
+						var ya=2;
+						var xa=2;
+function drawBall() 
+{
+		var c=document.getElementById("myCanvas");
+		var cxt=c.getContext("2d");
+		x=x+xa;
+		y=y+ya;
+		if( x < 15 || x > 1009 )
+				xa = -xa;
+		if( y < 15 || y > 753 )
+				ya = -ya;
+		cxt.fillStyle="#FFFFFF";
+		cxt.fillRect(0,0,1024,768);
+		cxt.fillStyle="#FF0000";
+		cxt.beginPath();
+		cxt.arc(x,y,15,0,Math.PI*2,true);
+		cxt.closePath();
+		cxt.fill();
+		t=setTimeout('drawBall()',16);
+}
+</script>
+</head>
+<body onload="drawBall()">
+
+		<canvas id="myCanvas" width="1024" height="768" style="border:1px solid #c3c3c3;">
+		Your browser does not support the canvas element.
+		</canvas>
+
+</body>
+</html>
+
