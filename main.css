@@ -1,23 +1,30 @@
 body {
-    background-color:#AAA;
+    background-color:#666;
     font-family: "Verdana", "Arial", "sans";
     color:#000000;
     font-size:1.05em;
     text-align:center;
 }
 
-section.footer {
-    color:#555;
-    font-size:.9em;
+#mainbox {
+    margin: auto auto auto auto;
+    display:inline-block;
+    border: solid 3px #000;
+    border-radius: .5em;
+    background-color:#AAA;
+    box-shadow: 0 0 .5em #222;
 }
 
-nav {
-    margin: 0px auto 0px auto;
+section.footer {
+    color:#444;
+    font-size:.9em;
+    margin-top: 5px;
 }
 
 ul {
-    display:inline-block;
     list-style-type:none;
+    margin: 20px;
+    padding:0px;
 }
 
 li {
