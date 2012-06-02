@@ -23,15 +23,14 @@ section.footer {
 
 ul {
     list-style-type:none;
-    margin: 20px;
+    margin: 17px 20px;
     padding:0px;
 }
 
 li {
     vertical-align:middle;
     display: inline-block;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin: 3px;
 }
 
 div.roundimg {
