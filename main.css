@@ -15,13 +15,6 @@ body {
     box-shadow: 0 0 5em #222;
 }
 
-section.footer {
-    color:#444;
-    font-size:.9em;
-    margin-top: 5px;
-    box-shadow: 0 0 5em #222;
-}
-
 ul {
     list-style-type:none;
     margin: 20px 20px;
