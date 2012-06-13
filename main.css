@@ -1,5 +1,5 @@
 body {
-    background-color:#666;
+    background-image:url(static/background.png);
     font-family: "Verdana", "Arial", "sans";
     color:#000000;
     font-size:1.05em;
@@ -7,23 +7,24 @@ body {
 }
 
 #mainbox {
-    margin: auto auto auto auto;
+    margin: .5em auto;
     display:inline-block;
     border: solid 3px #000;
     border-radius: .5em;
     background-color:#AAA;
-    box-shadow: 0 0 .5em #222;
+    box-shadow: 0 0 5em #222;
 }
 
 section.footer {
     color:#444;
     font-size:.9em;
     margin-top: 5px;
+    box-shadow: 0 0 5em #222;
 }
 
 ul {
     list-style-type:none;
-    margin: 17px 20px;
+    margin: 20px 20px;
     padding:0px;
 }
 
