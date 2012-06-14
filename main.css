@@ -1,9 +1,9 @@
 body {
     background-image:url(static/background.png);
-    font-family: "Verdana", "Arial", "sans";
-    color:#000000;
-    font-size:1.05em;
-    text-align:center;
+    font-family: "Courier New", "Courier", "Fixed", "monospace";
+    color: #000000;
+    font-size:1.2em;
+    text-align: center;
 }
 
 #mainbox {
