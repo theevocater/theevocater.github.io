@@ -35,6 +35,6 @@ div.roundimg {
 }
 
 div.roundimg:hover {
-    box-shadow: inset 0 0 .5em #AAA;
+    box-shadow: inset 0 0 .5em #000;
 }
 
