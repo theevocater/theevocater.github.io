@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="mainbox">
-            <h1>jake kaufman</h1>
+            <h1 id="title"></h1>
             <ul>
                 <li>
                     <a title="twitter" href="http://twitter.com/theevocater">
@@ -41,6 +41,20 @@
                 </li>
             </ul>
         </div>
+        <script type="text/javascript">
+            var title = "jake kaufman";
+            function setTitle(new_title) {
+                new_title = new_title || title;
+                document.getElementById('title').innerHTML = new_title;
+            };
+            setTitle();
+            links = document.getElementsByTagName("a");
+            for (var i = 0; i < links.length; ++i) {
+                links[i].onmouseover = new Function("setTitle(\"" + links[i].title + "\");");
+                links[i].onmouseout = function(){setTitle();};
+            }
+        </script>
     </body>
 </html>
+
 
