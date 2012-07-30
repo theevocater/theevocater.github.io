@@ -6,35 +6,3 @@ body {
     text-align: center;
 }
 
-#mainbox {
-    margin: .5em auto;
-    display:inline-block;
-    border: solid 3px #000;
-    border-radius: .5em;
-    background-color:#AAA;
-    box-shadow: 0 0 5em #222;
-}
-
-ul {
-    list-style-type:none;
-    margin: 20px 20px;
-    padding:0px;
-}
-
-li {
-    vertical-align:middle;
-    display: inline-block;
-    margin: 3px;
-}
-
-div.roundimg {
-    height: 129px;
-    width: 129px;
-    border: solid 3px #000;
-    border-radius: .5em;
-}
-
-div.roundimg:hover {
-    box-shadow: inset 0 0 .5em #000;
-}
-
