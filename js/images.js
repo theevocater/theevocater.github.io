@@ -1,34 +1,38 @@
 var prefix = "/api/images/";
 var cur_prefix;
 function MenuLink(uri,text) {
-  var link = $(document.createElement('a')).attr("href", "#" + uri).text(text);
+  var link = $(document.createElement('a')).attr("href", uri).text(text);
   link.click(function(uri) {
     return function() {
       console.log("Fetching: " + uri);
       getData(uri);
     };
-  }(uri));
-  return $(document.createElement('p')).append(link);
+  }(uri.slice(1)));
+  return $(document.createElement('li')).append(link);
 }
 
 function getData(path) {
   path = path || "";
   cur_prefix = path;
   $.getJSON(prefix+path, function(data) {
-    $("#mainbox").html("");
+    $("nav > ul").html("");
 
     var hash = window.location.hash;
-    console.log("up_str: " + hash);
     
     // create an 'up' link if not at the top level
-    if (hash.length != 0 || hash === "#") {
+    if (hash.length > 1) {
       var up_str = hash.substring(0, hash.lastIndexOf("/"));
-      $("#mainbox").append(new MenuLink(up_str, "Up"));
+      $("nav > ul").append(new MenuLink(up_str.length ? up_str : "#", "Up"));
     }
 
     // create the rest of the directory links.
     for (var i = 0; i < data.dirs.length; ++i) {
-      $("#mainbox").append(new MenuLink(data.dirs[i], data.dirs[i]));
+      var url ;
+      if (hash.length > 1)
+        url = hash + "/" + data.dirs[i];
+      else 
+        url = "#" + data.dirs[i];
+      $("nav > ul").append(new MenuLink(url, data.dirs[i]));
     }
 
     // insert the images
@@ -48,3 +52,9 @@ $(document).ready(function() {
   getData(window.location.hash.slice(1));
 });
 
+/*
+ * Create images with a real frame and give the image a name.
+ * Fix up the menu links to be buttons or something.
+ *
+ *
+ */

@@ -15,7 +15,7 @@ div {
 
 }
 
-#mainbox {
+nav {
   position: fixed;
   top: 10px;
   left: 10px;
@@ -27,10 +27,16 @@ div {
   border-radius: .5em;
   background-color:#AAA;
   box-shadow: 0 0 5em #222;
+  display: block;
 }
 
-p {
-  display: inline-block;
+ul {
+    list-style-type:none;
+    padding:0px;
+    margin: 5px;
 
+}
 
+li {
+  text-align: left;
 }
