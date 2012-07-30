@@ -1,0 +1,36 @@
+img {
+  margin: 10px;
+  display:inline-block;
+  border: solid 3px #000;
+  border-radius: .5em;
+  background-color:#AAA;
+  box-shadow: 0 0 5em #222;
+}
+
+div {
+  float:right;
+  right: 10px;
+  width: 90%;
+
+
+}
+
+#mainbox {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  margin: .5em auto;
+  width: 10%;
+  min-width: 100px;
+  display:inline-block;
+  border: solid 3px #000;
+  border-radius: .5em;
+  background-color:#AAA;
+  box-shadow: 0 0 5em #222;
+}
+
+p {
+  display: inline-block;
+
+
+}
