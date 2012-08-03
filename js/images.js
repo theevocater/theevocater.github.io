@@ -11,14 +11,31 @@ function MenuLink(uri,text) {
   return $(document.createElement('li')).append(link);
 }
 
+function ImageBox(url, text) {
+  var image_box = $(document.createElement('div')).addClass("image_box");
+
+  // add the image
+  image_box.append($(document.createElement('img')).hide().load(function() {
+    // add a fade in animation on load
+    $(this).fadeIn('fast', function() { 
+    });
+  }).attr("src", decodeURI(url)));
+
+  image_box.append($(document.createElement('div')).addClass("caption").text(url));
+
+  return image_box;
+}
+
+
 function getData(path) {
   path = path || "";
   cur_prefix = path;
   $.getJSON(prefix+path, function(data) {
     $("nav > ul").html("");
+    $("nav > ul").hide();
 
     var hash = window.location.hash;
-    
+
     // create an 'up' link if not at the top level
     if (hash.length > 1) {
       var up_str = hash.substring(0, hash.lastIndexOf("/"));
@@ -30,19 +47,20 @@ function getData(path) {
       var url ;
       if (hash.length > 1)
         url = hash + "/" + data.dirs[i];
-      else 
+      else
         url = "#" + data.dirs[i];
       $("nav > ul").append(new MenuLink(url, data.dirs[i]));
     }
 
+    $("nav > ul").slideDown();
+
     // insert the images
     cur_imgs = data.imgs;
-    $('div').text("");
+    $('#image_display').text("");
     for (i = 0; i < cur_imgs.length; ++i) {
       var url = "/images/" + path + "/"+ cur_imgs[i];
       console.log(url);
-      var img = $(document.createElement('img')).attr("src", decodeURI(url));
-      $("div").append(img);
+      $("#image_display").append(new ImageBox(url));
     }
   });
 }
