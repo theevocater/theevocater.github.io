@@ -11,17 +11,24 @@ function MenuLink(uri,text) {
   return $(document.createElement('li')).append(link);
 }
 
+function removeExtension(file) {
+  var match = /^(.*)\./.exec(file);
+  if (match && match.length == 2)
+    return match[1];
+  else
+    return file;
+}
+
 function ImageBox(url, text) {
-  var image_box = $(document.createElement('div')).addClass("image_box");
+  var image_box = $(document.createElement('div')).addClass("image_box").hide();
 
   // add the image
-  image_box.append($(document.createElement('img')).hide().load(function() {
+  image_box.append($(document.createElement('img')).load(function() {
     // add a fade in animation on load
-    $(this).fadeIn('fast', function() { 
-    });
+    image_box.fadeIn('slow');
   }).attr("src", decodeURI(url)));
 
-  image_box.append($(document.createElement('div')).addClass("caption").text(url));
+  image_box.append($(document.createElement('div')).addClass("caption").text(removeExtension(text)));
 
   return image_box;
 }
@@ -60,7 +67,7 @@ function getData(path) {
     for (i = 0; i < cur_imgs.length; ++i) {
       var url = "/images/" + path + "/"+ cur_imgs[i];
       console.log(url);
-      $("#image_display").append(new ImageBox(url));
+      $("#image_display").append(new ImageBox(url, cur_imgs[i]));
     }
   });
 }

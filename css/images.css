@@ -36,22 +36,17 @@ li {
 }
 
 .caption {
-  /*
-   *padding-top: 10px;
-   *padding-bottom: 10px;
-   */
-  /*
-   *background-color: #AAA;
-   */
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 0 0 .5em .5em;
   margin: 0px;
-  display: inline;
+  display: block;
 }
 
 div.image_box {
-  display: inline-block;
+  display: table;
   padding: 0px;
-  margin: 10px;
+  margin: 10px auto;
   box-shadow: 0 0 5em #222;
   border-radius: 0 0 .5em .5em;
 }
