@@ -48,6 +48,10 @@ function getData(path) {
       var up_str = hash.substring(0, hash.lastIndexOf("/"));
       $("nav > ul").append(new MenuLink(up_str.length ? up_str : "#", "Up"));
     }
+    else {
+      $("nav > ul").append(new MenuLink("/", "Up"));
+
+    }
 
     // create the rest of the directory links.
     for (var i = 0; i < data.dirs.length; ++i) {
