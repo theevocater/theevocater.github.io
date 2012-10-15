@@ -1,10 +1,14 @@
 #mainbox {
-    margin: .5em auto;
-    display:inline-block;
-    border: solid 3px #000;
-    border-radius: .5em;
+    display: table;
+    margin: 0 auto;
+    border-left: solid 3px #000;
+    border-right: solid 3px #000;
+    border-bottom: solid 3px #000;
+    /*position: absolute;*/
+
+    /*border-radius: .5em;*/
     background-color:#AAA;
-    box-shadow: 0 0 5em #222;
+    /*box-shadow: 0 0 5em #222;*/
 }
 
 ul {

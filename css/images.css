@@ -7,22 +7,21 @@ img {
   position: absolute;
   right: 0;
   width: 88%;
+  max-width: 88%;
 }
 
 nav {
   position: fixed;
   top: 0;
   left: 0;
-  margin: 1% 1%;
+  bottom: 0;
   width: 10%;
-  max-height: 90%;
   min-width: 100px;
   display:inline-block;
-  border: solid 3px #000;
-  border-radius: .5em;
+  border-right: solid 3px #000;
   background-color:#AAA;
-  box-shadow: 0 0 5em #222;
   overflow: auto;
+  padding: 5px;
 }
 
 ul {
