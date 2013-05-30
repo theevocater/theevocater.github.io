@@ -2,17 +2,17 @@ body {
     background-image:url(/static/background.png);
     font-family: "Courier New", "Courier", "Fixed", "monospace";
     color: #000000;
-    font-size:1.2em;
+    font-size: 1.2em;
     text-align: center;
 }
 
-#mainbox {
-    margin: .5em auto;
-    display:inline-block;
+nav {
+    display: inline-block;
     border: solid 3px #000;
     border-radius: .5em;
     background-color:#AAA;
     box-shadow: 0 0 5em #222;
+    margin-top: .5em;
 }
 
 ul {
@@ -22,7 +22,6 @@ ul {
 }
 
 li {
-    vertical-align:middle;
     display: inline-block;
     margin: 3px;
 }
