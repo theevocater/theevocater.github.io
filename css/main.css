@@ -1,6 +1,5 @@
 body {
-  /*background-image:url(/static/background.png);*/
-  background-color: #444;
+  background-color: #FFF;
   font-family: "Merriweather Sans", "Courier New", "Courier", "sans-serif";
   color: #000000;
   font-size: 1.2em;
@@ -9,44 +8,35 @@ body {
   margin: 0;
 }
 
-nav {
-  display: block;
-  /*border-bottom: solid 3px #000;*/
-  background-color: #AAA;
-  margin: 0;
-  padding: 5px;
-  width: 100%;
-}
-
-ul {
-  list-style-type:none;
-  margin: 20px 20px;
-  padding: 0px;
-}
-
-h1 {
-  border-bottom: solid 1px #999;
-  padding-bottom: 2px;
-}
-
-div {
-  width: 1000px;
-  margin-left: auto ;
-  margin-right: auto ;
-}
-
-li {
-  display: inline-block;
-  margin: 10px;
-}
-
 div.roundimg {
   height: 129px;
   width: 129px;
-  border: solid 2px #000;
+  padding: 20px;
+  margin: 0px;
+  background-position: center;
 }
 
 div.roundimg:hover {
-  box-shadow: inset 0 0 258px #444;
+  box-shadow: inset 0 0 258px #555;
 }
 
+th {
+  text-align: center;
+  padding: 5%;
+}
+
+tr {
+  padding: 0;
+  margin: 0;
+}
+
+td {
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
