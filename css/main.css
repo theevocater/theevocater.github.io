@@ -1,42 +1,17 @@
-body {
-  background-color: #FFF;
-  font-family: "Merriweather Sans", "Courier New", "Courier", "sans-serif";
-  color: #000000;
-  font-size: 1.2em;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
 div.roundimg {
   height: 129px;
   width: 129px;
   padding: 20px;
   margin: 0px;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 div.roundimg:hover {
   box-shadow: inset 0 0 258px #555;
 }
 
-th {
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
   text-align: center;
-  padding: 5%;
-}
-
-tr {
-  padding: 0;
-  margin: 0;
-}
-
-td {
-  padding: 0;
-  margin: 0;
-}
-
-table {
-  margin: auto;
-  border-collapse: collapse;
-  border-spacing: 0;
 }

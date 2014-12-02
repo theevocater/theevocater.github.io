@@ -1,0 +1,4 @@
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: "Merriweather Sans", "Courier New", "Courier", "sans-serif";
+}
