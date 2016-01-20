@@ -20,4 +20,11 @@ li {
 
 .name {
   margin-bottom:.5em;
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 48em) {
+  .name {
+    font-weight: normal;
+  }
 }
