@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+ul > ul {
+  margin:0;
+}
+
+li {
+  margin: .5em;
+  margin-left: 0;
+}
+
+.equipment {
+  margin-bottom: 1em;
+  margin-left: 1.5em;
+}
