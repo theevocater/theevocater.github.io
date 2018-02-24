@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nyquist Build Log</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/font.css" />
+    <link rel="stylesheet" href="/css/keyboard_build.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="item header">
+        <h1>Nyquist Build Log</h1>
+      </div>
+      <div class="item nav">
+        <ul>
+          <li><a href="#inventory">Inventory</a></li>
+          <li><a href="#assembly">Assembly</a></li>
+          <li><a href="#notes">Notes</a></li>
+        </ul>
+      </div>
+      <div class="item main">
+        <div id="inventory" class="item">
+          <h2>Inventory</h2>
+          <h3>Hardware</h3>
+          <p>
+            This is a full list of all the components you'll need to build and
+            program the board. The parts list isn't too complicated, but there
+            isn't a one stop shop so I've compiled a simple list here. All of
+            these places ship from the US so you should be able to get the
+            components in a week or two.
+          </p>
+          <ul>
+            <li>Board Kit. <a href="https://keeb.io/products/nyquist-keyboard?variant=48309345990">Keeb.io makes these boards</a>. The kit includes the diodes, the TRRS jacks, I2C resistors, and reset switches. You'll need a few other things though.</li>
+            <li>Case. <a href="https://keeb.io/collections/cases-plates/products/stainless-steel-nyquist-plates?variant=46393243974">Keeb.io sells a simple case for the Nyquist.</a> They print and cut out 2 PCBs as the top and bottom plate with stand-offs. If you know more than I do, there are cases on thingverse that you could print on shapeways for a nice clean plastic look.</li>
+            <li>2x Pro Micro. <a href="https://keeb.io/collections/split-keyboard-parts/products/pro-micro-5v-16mhz-arduino-compatible-atmega32u4">Keeb.io sells fairly cheap ones.</a> Just throw them in your cart with the case and board kit.</li>
+            <li>TRRS Cable. Any will do, but Keeb.io has <a href="">one</a></li>
+            <li>USB Micro Cable. <a href=""> </a></li>
+            <li>Switches. This is a hard decision you are going to want to spend some time with. I used <a href="https://novelkeys.xyz/collections/switches/products/novelkeys-x-kailh-speed-heavy-switches?variant=3747975168040">NovelKeys x Kailh Speed Heavy Switches - Burnt Orange</a>. These are really heavy switches with a slight bump right at the top. I recommend checking out switches testers like <a href="https://novelkeys.xyz/collections/switch-testers">this one</a>. I also recommend <a href="https://input.club/the-comparative-guide-to-mechanical-switches/">Input.club's Guide</a>. They go into some good detail about the various types possible.</li>
+            <li>Key Caps. This is mostly a question of taste. You are looking for an ortholinear set that has at least 60 keys with 5 rows. A basic one would be <a href="https://pimpmykeyboard.com/sa-ice-cap-keyset/">Pimp My Keyboard's "ICE CAP"</a> keyset. Make sure to purchase the "ortholinear" set.</li>
+          </ul>
+          <p>
+            You'll need a few other pieces of equipment if you are totally new
+            to assembling electronics. Make sure to have a soldering iron,
+            solder, and wire cutters on hand. Teaching you how to solder is out
+            of the scope of this guide, but it isn't incredibly difficult.
+            Consult some youtube videos and practice soldering some wire or buy
+            a practice board to start out.
+          </p>
+          <h3>Software</h3>
+          <p>
+            Right now you'll either need to be happy with the default keymap
+            that comes flashed onto the pro micros or set up the QMK build
+            chain. Head to
+            <a href="https://docs.qmk.fm/getting_started_build_tools.html">their docs</a>
+            and get everything set up. I'll walk you through flashing things
+            later. Make sure you install everything for avr/atmega because that
+            is what the pro micros use.
+          </p>
+        </div>
+        <div id="assembly" class="item">
+					<h2>Assembly</h2>
+          <h3>Prep</h3>
+          <p>
+            So all of your parts came in and you have a few hours of free time.
+            You have a couple of important but boring prep tasks before you can
+            assembly everything. I know, I know, but I promise that there are
+            few things worse than having to desolder your pro micro's 24 pins
+            because the one you bought was dead.
+          </p>
+          <h4>Test Pro Micros</h4>
+          <p>
+            Plug in the pro micros one at a time. Ensure that the voltage
+            between VCC and GND pins is roughly 5V. If it is not, the pro micro
+            is likely bad. This is a good time to test out that you have
+            correctly set up your build environment. See <a href="https://docs.qmk.fm/getting_started_make_guide.html">their docs</a> again for more general make advice. 
+            You are building a nyquist so the command should look roughly like
+            the following.
+					</p>
+<pre class="code">
+$ make nyquist/rev1:theevocater:avrdude
+QMK Firmware 0.5.236
+WARNING:
+ Some git sub-modules are out of date or modified, please consider runnning:
+ make git-submodule
+ You can ignore this warning if you are not compiling any ChibiOS keyboards,
+ or if you have modified the ChibiOS libraries yourself. 
+
+Making nyquist/rev1 with keymap theevocater and target avrdude
+
+avr-gcc (GCC) 7.3.0
+Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Size before:
+   text	   data	    bss	    dec	    hex	filename
+      0	  24920	      0	  24920	   6158	./.build/nyquist_rev1_theevocater.hex
+
+Compiling: ./tmk_core/common/command.c                                                              [OK]
+Linking: .build/nyquist_rev1_theevocater.elf                                                        [OK]
+Creating load file for flashing: .build/nyquist_rev1_theevocater.hex                                [OK]
+Checking file size of nyquist_rev1_theevocater.hex                                                  [OK]
+ * File size is fine - 24920/28672
+Detecting USB port, reset your controller now...........
+Detected controller on USB port at /dev/tty.usbmodemFD121
+
+Connecting to programmer: .
+Found programmer: Id = "CATERIN"; type = S
+    Software Version = 1.0; No Hardware Version given.
+Programmer supports auto addr increment.
+Programmer supports buffered memory access with buffersize=128 bytes.
+
+Programmer supports the following devices:
+    Device code: 0x44
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9587 (probably m32u4)
+avrdude: NOTE: "flash" memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file "./.build/nyquist_rev1_theevocater.hex"
+avrdude: input file ./.build/nyquist_rev1_theevocater.hex auto detected as Intel Hex
+avrdude: writing flash (24920 bytes):
+
+Writing | ################################################## | 100% 1.95s
+
+avrdude: 24920 bytes of flash written
+avrdude: verifying flash memory against ./.build/nyquist_rev1_theevocater.hex:
+avrdude: load data flash data from input file ./.build/nyquist_rev1_theevocater.hex:
+avrdude: input file ./.build/nyquist_rev1_theevocater.hex auto detected as Intel Hex
+avrdude: input file ./.build/nyquist_rev1_theevocater.hex contains 24920 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.26s
+
+avrdude: verifying ...
+avrdude: 24920 bytes of flash verified
+
+avrdude: safemode: Fuses OK (E:FB, H:D8, L:FF)
+
+avrdude done.  Thank you.
+</pre>
+					<p>
+						To get that to work you'll need to briefly short the reset pin to ground when it says <span class="code">Detecting USB port, reset your controller now...........</span>. Once you wire the keyboard up there is a button to make this simpler.
+          </p>
+					<h4>Seat Switches</h4>
+					<p>
+						The next step is to seat all of the switches into the top cases.
+            You will want to ensure you orient the switches correctly. The
+            cutouts for 2u keys should be closer to you, and screw furthest
+            from you should be close to the left for the left side, and close
+            to the right for the right side. TODO: put photo here. Once you've
+            fit all of them, check all of the pins on the bottom of the
+            switches. Carefully bend any pins back straight, and if any are
+            broken replace the switch.
+					</p>
+          <p>
+            This is a good time to make sure everything else fits. Mount the
+            standoffs on the top case and ensure the boards fit flush with the
+            switches. If it doesn't, verify you didn't install a switch upside
+            down.
+          </p>
+          <h4>Solder Diodes</h4>
+          <p>
+            Next, you'll solder the diodes. The process is straightforward.
+            First, bend the legs on each of the diodes. You'll need 60 of them.
+            Try using the the side of the case or PCB to bend the legs into the
+            right shape. Place the diode against the flat of the case and then
+            bend the leg around the side of the case. The black line on the
+            diode should be closer to the square pad. Once you've placed them
+            all, solder them all. Trim the legs to be flush to the solder.
+          </p>
+          <h4></h4>
+          <p>
+          </p>
+				</div>
+        <div id="notes" class="item">
+					<h2>Notes</h2>
+          <p>
+            TODO: Add a list of other guides
+          </p>
+				</div>
+      </div>
+      <div class="item footer">
+        <p>
+          Written by Jake Kaufman. Feel free to say hi on <a
+           href="http://twitter.com/theevocater">twitter</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

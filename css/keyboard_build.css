@@ -1,0 +1,60 @@
+.header {
+  grid-area: header;
+  color: red;
+}
+.main {
+  grid-area: main;
+  color: green;
+}
+.nav {
+  grid-area: sidebar;
+  color: pink;
+  min-width: 13%;
+}
+.footer {
+  grid-area: footer;
+  color: blue;
+}
+
+.item {
+  border: 1em solid;
+}
+
+.code {
+  font-style: italic;
+  border: 2px dotted grey;
+  color: green;
+}
+
+span.code {
+	border: 0;
+}
+
+a {
+  color: orange;
+}
+
+#inventory {
+  color: black;
+  background-color: #aaa;
+}
+
+#assembly {
+  color: #aaa;
+  background-color: #000;
+}
+
+#notes {
+  color: black;
+  background-color: #aaa;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
