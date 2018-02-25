@@ -1,19 +1,19 @@
 .header {
   grid-area: header;
-  color: red;
+  /*color: red;*/
 }
 .main {
   grid-area: main;
-  color: green;
+ /* color: green;*/
 }
 .nav {
   grid-area: sidebar;
-  color: pink;
+ /* color: pink;*/
   min-width: 13%;
 }
 .footer {
   grid-area: footer;
-  color: blue;
+ /* color: blue;*/
 }
 
 .item {
@@ -31,9 +31,9 @@ span.code {
 }
 
 a {
-  color: orange;
+ /* color: orange;*/
 }
-
+/*
 #inventory {
   color: black;
   background-color: #aaa;
@@ -48,7 +48,7 @@ a {
   color: black;
   background-color: #aaa;
 }
-
+*/
 .container {
   display: grid;
   grid-template-columns: 200px auto;
