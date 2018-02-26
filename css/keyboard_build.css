@@ -29,6 +29,13 @@
   background-color: #eee;
 }
 
+img {
+  display: block;
+  margin: auto;
+  width: 50%;
+  max-width: 350px;
+}
+
 span.code {
   border: 0;
   background-color: white;
@@ -55,12 +62,12 @@ a {
 */
 .container {
   display: grid;
-  grid-template-columns: 200px auto;
+  grid-template-columns: 200px auto 100px;
   grid-template-rows: auto;
   grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
+    "header header header"
+    "sidebar main ."
+    "footer footer footer";
 }
 
 pre {
