@@ -22,12 +22,16 @@
 
 .code {
   font-style: italic;
-  border: 2px dotted grey;
+  font-size: 0.8em;
+  font-family: 'Source Code Pro', monospace;
+  border: 1px solid grey;
   color: green;
+  background-color: #eee;
 }
 
 span.code {
-	border: 0;
+  border: 0;
+  background-color: white;
 }
 
 a {
@@ -57,4 +61,11 @@ a {
     "header header"
     "sidebar main"
     "footer footer";
+}
+
+pre {
+}
+
+html {
+  font-family: 'Helvetica', 'Courier New', 'sans-serif';
 }
